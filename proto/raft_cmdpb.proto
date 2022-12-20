@@ -246,7 +246,6 @@ enum AdminCmdType {
     ChangePeerV2 = 11;
     PrepareFlashback = 12;
     FinishFlashback = 13;
-    BatchSwitchWitness = 14;
 }
 
 message AdminRequest {
