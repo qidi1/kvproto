@@ -120,6 +120,7 @@ message PrewriteRequest {
     uint64 max_commit_ts = 14;
     // The level of assertion to use on this prewrte request.
     AssertionLevel assertion_level = 15;
+    repeated uint64 history_start_ts=16;
 }
 
 message PrewriteResponse {
