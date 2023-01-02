@@ -4,7 +4,7 @@ CURDIR := $(shell pwd)
 
 export PATH := $(CURDIR)/bin/:$(PATH)
 
-all: go rust 
+all: go rust c++
 
 init:
 	mkdir -p $(CURDIR)/bin
