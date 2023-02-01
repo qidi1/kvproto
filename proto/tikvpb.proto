@@ -22,6 +22,7 @@ service Tikv {
     rpc KvGet(kvrpcpb.GetRequest) returns (kvrpcpb.GetResponse) {}
     rpc KvScan(kvrpcpb.ScanRequest) returns (kvrpcpb.ScanResponse) {}
     rpc KvPrewrite(kvrpcpb.PrewriteRequest) returns (kvrpcpb.PrewriteResponse) {}
+     rpc VertifyReadSet(kvrpcpb.VertifyReadSetRequest)returns(kvrpcpb.VertifyReadSetResponse){}
     rpc KvPessimisticLock(kvrpcpb.PessimisticLockRequest) returns (kvrpcpb.PessimisticLockResponse) {}
     rpc KVPessimisticRollback(kvrpcpb.PessimisticRollbackRequest) returns (kvrpcpb.PessimisticRollbackResponse) {}
     rpc KvTxnHeartBeat(kvrpcpb.TxnHeartBeatRequest) returns (kvrpcpb.TxnHeartBeatResponse) {}
@@ -144,6 +145,7 @@ message BatchCommandsRequest {
             kvrpcpb.CheckSecondaryLocksRequest CheckSecondaryLocks = 33;
 
             kvrpcpb.RawCoprocessorRequest RawCoprocessor = 34;
+            kvrpcpb.VertifyReadSetRequest VertifyReadSet=35;
 
             // For some test cases.
             BatchCommandsEmptyRequest Empty = 255;
@@ -195,6 +197,7 @@ message BatchCommandsResponse {
             kvrpcpb.CheckSecondaryLocksResponse CheckSecondaryLocks = 33;
 
             kvrpcpb.RawCoprocessorResponse RawCoprocessor = 34;
+            kvrpcpb.VertifyReadSetResponse VertifyReadSet=35;
 
             // For some test cases.
             BatchCommandsEmptyResponse Empty = 255;
